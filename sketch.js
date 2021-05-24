@@ -1,7 +1,7 @@
 //Create variables here
 var count=0;
 var play;
-var reset;
+var r;
 
 
 function preload()
@@ -15,16 +15,18 @@ function setup() {
  // play = createSprite(200,260,100,100);
   //play.shapeColor = "green";
   //reset = createSprite(300,200,80,20);
-  reset = createButton(' Reset ');
-  reset.position(625,225)
+  r = createButton(' Reset ');
+  r.position(625,225)
  // reset.mousePressed(Reset);
- // reset.touch(Reset);
+ 
   play = createButton(' Count ');
   play.position(500,280);
   play.style('width','100px');
   play.style('height','100px');
  // play.mousePressed(mouseP);
- // play.touch(mouseP);
+
+ 
+ // r.touches(Reset);
 }
 
 
@@ -34,14 +36,16 @@ function draw() {
    stroke(10);
    fill("black");
    text(" "+count,50,125);
+   r.touches(resetR);
+  play.touches(mouseP);
   // mouseP();
-  if (touches(play)) {
+ /* if (touches(play)) {
     mouseP();
   }
 
   if (touches(reset)) {
     Reset();
-  }
+  }*/
    
    
   drawSprites();
@@ -50,12 +54,12 @@ function draw() {
 }
 
 function mouseP(){
-  //if (mousePressedOver(play) ) {
+  
   count=count+1;
- // }
+ 
 }
 
-function Reset(){
+function resetR(){
   count=0;
 }
 
