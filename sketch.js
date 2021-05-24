@@ -17,13 +17,13 @@ function setup() {
   //reset = createSprite(300,200,80,20);
   reset = createButton(' Reset ');
   reset.position(625,225)
-  reset.mousePressed(Reset);
+ // reset.mousePressed(Reset);
  // reset.touch(Reset);
   play = createButton(' Count ');
   play.position(500,280);
   play.style('width','100px');
   play.style('height','100px');
-  play.mousePressed(mouseP);
+ // play.mousePressed(mouseP);
  // play.touch(mouseP);
 }
 
@@ -35,11 +35,11 @@ function draw() {
    fill("black");
    text(" "+count,50,125);
   // mouseP();
-  if (touch[0].isTouching(play)) {
+  if (touches(play)) {
     mouseP();
   }
 
-  if (touch[0].isTouching(reset)) {
+  if (touches(reset)) {
     Reset();
   }
    
